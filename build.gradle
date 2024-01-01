@@ -138,6 +138,9 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+    maven {
+        url "https://cursemaven.com"
+    }
 }
 
 dependencies {
@@ -147,6 +150,21 @@ dependencies {
     // If the group id is "net.minecraft" and the artifact id is one of ["client", "server", "joined"],
     // then special handling is done to allow a setup of a vanilla dependency without the use of an external repository.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    implementation fg.deobf("curse.maven:jei-238222:4712868")
+    implementation fg.deobf("curse.maven:mystical-agriculture-246640:4990344")
+    implementation fg.deobf("curse.maven:cucumber-272335:4906607")
+    implementation fg.deobf("curse.maven:mystical-agradditions-256247:4904346")
+    implementation fg.deobf("curse.maven:mystical-customization-280441:4602099")
+    implementation fg.deobf("curse.maven:cloth-config-348521:4973441")
+    implementation fg.deobf("curse.maven:architectury-api-419699:4663010")
+    implementation fg.deobf("curse.maven:jade-324717:4986594")
+
+    implementation fg.deobf("curse.maven:occultism-361026:4994390")
+    implementation fg.deobf("curse.maven:curios-309927:4985525")
+    implementation fg.deobf("curse.maven:geckolib-388172:4933987")
+    implementation fg.deobf("curse.maven:modonomicon-538392:4986652")
+    implementation fg.deobf("curse.maven:smartbrainlib-661293:4981397")
 
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
