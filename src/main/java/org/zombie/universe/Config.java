@@ -23,9 +23,9 @@ public class Config
 //            .comment("Whether to log the dirt block on common setup")
 //            .define("logDirtBlock", true);
 //
-//    private static final ForgeConfigSpec.IntValue MAGIC_NUMBER = BUILDER
-//            .comment("A magic number")
-//            .defineInRange("magicNumber", 42, 0, Integer.MAX_VALUE);
+    private static final ForgeConfigSpec.IntValue BONUS = BUILDER
+            .comment("Bonus rolls.")
+            .defineInRange("Bonus ROlls", 0, 0, 20);
 //
 //    public static final ForgeConfigSpec.ConfigValue<String> MAGIC_NUMBER_INTRODUCTION = BUILDER
 //            .comment("What you want the introduction message to be for the magic number")
@@ -69,6 +69,7 @@ public class Config
     public static Set<Item> supremium;
     public static Set<Item> insanium;
     public static Set<Item> creative;
+    public static int bonus;
     
     private static boolean validateItemName(final Object obj)
     {
@@ -113,5 +114,6 @@ public class Config
         creative = CREATIVE_STRINGS.get().stream()
                 .map(itemName -> ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemName)))
                 .collect(Collectors.toSet());
+        bonus = BONUS.get();
     }
 }
