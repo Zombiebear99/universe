@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "universe:imperium_universe"
+          "name": "universe:insanium_universe"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "universe:blocks/imperium_universe"
+  "random_sequence": "universe:blocks/insanium_universe"
 }
