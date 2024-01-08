@@ -22,25 +22,25 @@ public class Modblocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, Universe.MOD_ID);
 
     public static final RegistryObject<Block> INFERIUM_UNIVERSE = registerBlock("inferium_universe",
-            ()->new InferiumUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
+            ()->new InferiumUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).dynamicShape()));
 
     public static final RegistryObject<Block> PRUDENTIUM_UNIVERSE = registerBlock("prudentium_universe",
-            ()->new PrudentiumUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
+            ()->new PrudentiumUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     public static final RegistryObject<Block> TERTIUM_UNIVERSE = registerBlock("tertium_universe",
-            ()->new TertiumUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
+            ()->new TertiumUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     public static final RegistryObject<Block> IMPERIUM_UNIVERSE = registerBlock("imperium_universe",
-            ()->new ImperiumUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
+            ()->new ImperiumUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     public static final RegistryObject<Block> SUPREMIUM_UNIVERSE = registerBlock("supremium_universe",
-            ()->new SupremiumUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
+            ()->new SupremiumUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     public static final RegistryObject<Block> INSANIUM_UNIVERSE = registerBlock("insanium_universe",
-            ()->new InsaniumUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
+            ()->new InsaniumUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     public static final RegistryObject<Block> CREATIVE_UNIVERSE = registerBlock("creative_universe",
-            ()->new CreativeUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
+            ()->new CreativeUniverseBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     public static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name,block);

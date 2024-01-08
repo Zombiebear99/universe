@@ -21,7 +21,7 @@ public class ModCreativeTab {
                         output.accept(Modblocks.INFERIUM_UNIVERSE.get());
                         output.accept(Modblocks.PRUDENTIUM_UNIVERSE.get());
                         output.accept(Modblocks.TERTIUM_UNIVERSE.get());
-                        output.accept(Modblocks.INFERIUM_UNIVERSE.get());
+                        output.accept(Modblocks.IMPERIUM_UNIVERSE.get());
                         output.accept(Modblocks.SUPREMIUM_UNIVERSE.get());
                         output.accept(Modblocks.INSANIUM_UNIVERSE.get());
                         output.accept(Modblocks.CREATIVE_UNIVERSE.get());

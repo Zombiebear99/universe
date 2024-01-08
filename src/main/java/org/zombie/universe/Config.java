@@ -8,6 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -25,35 +26,69 @@ public class Config
 //
     private static final ForgeConfigSpec.IntValue BONUS = BUILDER
             .comment("Bonus rolls.")
-            .defineInRange("Bonus ROlls", 0, 0, 20);
+            .defineInRange("Bonus Rolls", 0, 0, 20);
 //
 //    public static final ForgeConfigSpec.ConfigValue<String> MAGIC_NUMBER_INTRODUCTION = BUILDER
 //            .comment("What you want the introduction message to be for the magic number")
 //            .define("magicNumberIntroduction", "The magic number is... ");
 //
 //     a list of strings that are treated as resource locations for items
+//    inferium universe
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> INFERIUM_STRINGS = BUILDER
             .comment("A list of items to drop from universe.")
             .defineListAllowEmpty("Inferium Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
+    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> INFERIUM_WEIGHT = BUILDER
+            .comment("A list of weight associated to the items dropped.")
+            .defineListAllowEmpty("Inferium universe weight",List.of(2,3,4),Config::validateWeightList);
+
+//    prudentium universe
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> PRUDENTIUM_STRINGS = BUILDER
             .defineListAllowEmpty("Prudentium Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
+    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> PRUDENTIUM_WEIGHT = BUILDER
+            .comment("A list of weight associated to the items dropped.")
+            .defineListAllowEmpty("Prudentium universe weight",List.of(2,3,4),Config::validateWeightList);
+
+//    tertium universe
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> TERTIUM_STRINGS = BUILDER
             .defineListAllowEmpty("Tertium Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
-    private static final ForgeConfigSpec.ConfigValue<List<? extends String>> IMPERIUM_STRINGS = BUILDER
+    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> TERTIUM_WEIGHT = BUILDER
+            .comment("A list of weight associated to the items dropped.")
+            .defineListAllowEmpty("Tertium universe weight",List.of(2,3,4),Config::validateWeightList);
+
+//    imperium universe
+    private static final ForgeConfigSpec.ConfigValue<List<? extends String>> IMPERIUM_STRINGS = BUILDER.comment()
             .defineListAllowEmpty("Imperium Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
-    private static final ForgeConfigSpec.ConfigValue<List<? extends String>> SUPREMIUM_STRINGS = BUILDER
+    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> IMPERIUM_WEIGHT = BUILDER
+            .comment("A list of weight associated to the items dropped.")
+            .defineListAllowEmpty("Imperium universe weight",List.of(2,3,4),Config::validateWeightList);
+
+//    supremium universe
+    private static final ForgeConfigSpec.ConfigValue<List<? extends String>> SUPREMIUM_STRINGS = BUILDER.comment()
             .defineListAllowEmpty("Supremium Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
-    private static final ForgeConfigSpec.ConfigValue<List<? extends String>> INSANIUM_STRINGS = BUILDER
+    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> SUPREMIUM_WEIGHT = BUILDER
+            .comment("A list of weight associated to the items dropped.")
+            .defineListAllowEmpty("Supremium universe weight",List.of(2,3,4),Config::validateWeightList);
+
+//    Insanium universe
+    private static final ForgeConfigSpec.ConfigValue<List<? extends String>> INSANIUM_STRINGS = BUILDER.comment()
             .defineListAllowEmpty("Insanium Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
-    private static final ForgeConfigSpec.ConfigValue<List<? extends String>> CREATIVE_STRINGS = BUILDER
+    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> INSANIUM_WEIGHT = BUILDER
+            .comment("A list of weight associated to the items dropped.")
+            .defineListAllowEmpty("Insanium universe weight",List.of(2,3,4),Config::validateWeightList);
+
+//    creative universe
+    private static final ForgeConfigSpec.ConfigValue<List<? extends String>> CREATIVE_STRINGS = BUILDER.comment()
             .defineListAllowEmpty("Creative Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
-    
+
+    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> CREATIVE_WEIGHT = BUILDER
+            .comment("A list of weight associated to the items dropped.")
+            .defineListAllowEmpty("Creative universe weight",List.of(2,3,4),Config::validateWeightList);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 //
@@ -70,10 +105,21 @@ public class Config
     public static Set<Item> insanium;
     public static Set<Item> creative;
     public static int bonus;
-    
+    public static Set<Integer> inferium_weight;
+    public static Set<Integer> prudentium_weight;
+    public static Set<Integer> tertium_weight;
+    public static Set<Integer> imperium_weight;
+    public static Set<Integer> supremium_weight;
+    public static Set<Integer> insanium_weight;
+    public static Set<Integer> creative_weight;
+
     private static boolean validateItemName(final Object obj)
     {
         return obj instanceof final String itemName && ForgeRegistries.ITEMS.containsKey(new ResourceLocation(itemName));
+    }
+
+    private static boolean validateWeightList(final Object obj){
+        return true;
     }
 
     @SubscribeEvent
@@ -114,6 +160,15 @@ public class Config
         creative = CREATIVE_STRINGS.get().stream()
                 .map(itemName -> ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemName)))
                 .collect(Collectors.toSet());
+
         bonus = BONUS.get();
+
+        inferium_weight = new HashSet<>(INFERIUM_WEIGHT.get());
+        prudentium_weight = new HashSet<>(PRUDENTIUM_WEIGHT.get());
+        tertium_weight = new HashSet<>(TERTIUM_WEIGHT.get());
+        imperium_weight = new HashSet<>(IMPERIUM_WEIGHT.get());
+        supremium_weight = new HashSet<>(SUPREMIUM_WEIGHT.get());
+        insanium_weight = new HashSet<>(INSANIUM_WEIGHT.get());
+        creative_weight = new HashSet<>(CREATIVE_WEIGHT.get());
     }
 }
