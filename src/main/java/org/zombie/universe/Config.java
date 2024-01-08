@@ -38,57 +38,50 @@ public class Config
             .comment("A list of items to drop from universe.")
             .defineListAllowEmpty("Inferium Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
-    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> INFERIUM_WEIGHT = BUILDER
-            .comment("A list of weight associated to the items dropped.")
-            .defineListAllowEmpty("Inferium universe weight",List.of(2,3,4),Config::validateWeightList);
+//    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> INFERIUM_WEIGHT = BUILDER
+//            .defineListAllowEmpty("Inferium universe weight",List.of(2,3,4),Config::validateWeightList);
 
 //    prudentium universe
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> PRUDENTIUM_STRINGS = BUILDER
             .defineListAllowEmpty("Prudentium Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
-    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> PRUDENTIUM_WEIGHT = BUILDER
-            .comment("A list of weight associated to the items dropped.")
-            .defineListAllowEmpty("Prudentium universe weight",List.of(2,3,4),Config::validateWeightList);
+//    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> PRUDENTIUM_WEIGHT = BUILDER
+//            .defineListAllowEmpty("Prudentium universe weight",List.of(2,3,4),Config::validateWeightList);
 
 //    tertium universe
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> TERTIUM_STRINGS = BUILDER
             .defineListAllowEmpty("Tertium Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
-    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> TERTIUM_WEIGHT = BUILDER
-            .comment("A list of weight associated to the items dropped.")
-            .defineListAllowEmpty("Tertium universe weight",List.of(2,3,4),Config::validateWeightList);
+//    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> TERTIUM_WEIGHT = BUILDER
+//            .defineListAllowEmpty("Tertium universe weight",List.of(2,3,4),Config::validateWeightList);
 
 //    imperium universe
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> IMPERIUM_STRINGS = BUILDER.comment()
             .defineListAllowEmpty("Imperium Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
-    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> IMPERIUM_WEIGHT = BUILDER
-            .comment("A list of weight associated to the items dropped.")
-            .defineListAllowEmpty("Imperium universe weight",List.of(2,3,4),Config::validateWeightList);
+//    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> IMPERIUM_WEIGHT = BUILDER
+//            .defineListAllowEmpty("Imperium universe weight",List.of(2,3,4),Config::validateWeightList);
 
 //    supremium universe
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> SUPREMIUM_STRINGS = BUILDER.comment()
             .defineListAllowEmpty("Supremium Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
-    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> SUPREMIUM_WEIGHT = BUILDER
-            .comment("A list of weight associated to the items dropped.")
-            .defineListAllowEmpty("Supremium universe weight",List.of(2,3,4),Config::validateWeightList);
+//    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> SUPREMIUM_WEIGHT = BUILDER
+//            .defineListAllowEmpty("Supremium universe weight",List.of(2,3,4),Config::validateWeightList);
 
 //    Insanium universe
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> INSANIUM_STRINGS = BUILDER.comment()
             .defineListAllowEmpty("Insanium Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
-    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> INSANIUM_WEIGHT = BUILDER
-            .comment("A list of weight associated to the items dropped.")
-            .defineListAllowEmpty("Insanium universe weight",List.of(2,3,4),Config::validateWeightList);
+//    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> INSANIUM_WEIGHT = BUILDER
+//            .defineListAllowEmpty("Insanium universe weight",List.of(2,3,4),Config::validateWeightList);
 
 //    creative universe
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> CREATIVE_STRINGS = BUILDER.comment()
             .defineListAllowEmpty("Creative Contained Universe", List.of("minecraft:iron_ingot"), Config::validateItemName);
 
-    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> CREATIVE_WEIGHT = BUILDER
-            .comment("A list of weight associated to the items dropped.")
-            .defineListAllowEmpty("Creative universe weight",List.of(2,3,4),Config::validateWeightList);
+//    private static final ForgeConfigSpec.ConfigValue<List<? extends Integer>> CREATIVE_WEIGHT = BUILDER
+//            .defineListAllowEmpty("Creative universe weight",List.of(2,3,4),Config::validateWeightList);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 //
@@ -163,12 +156,12 @@ public class Config
 
         bonus = BONUS.get();
 
-        inferium_weight = new HashSet<>(INFERIUM_WEIGHT.get());
-        prudentium_weight = new HashSet<>(PRUDENTIUM_WEIGHT.get());
-        tertium_weight = new HashSet<>(TERTIUM_WEIGHT.get());
-        imperium_weight = new HashSet<>(IMPERIUM_WEIGHT.get());
-        supremium_weight = new HashSet<>(SUPREMIUM_WEIGHT.get());
-        insanium_weight = new HashSet<>(INSANIUM_WEIGHT.get());
-        creative_weight = new HashSet<>(CREATIVE_WEIGHT.get());
+//        inferium_weight = new HashSet<>(INFERIUM_WEIGHT.get());
+//        prudentium_weight = new HashSet<>(PRUDENTIUM_WEIGHT.get());
+//        tertium_weight = new HashSet<>(TERTIUM_WEIGHT.get());
+//        imperium_weight = new HashSet<>(IMPERIUM_WEIGHT.get());
+//        supremium_weight = new HashSet<>(SUPREMIUM_WEIGHT.get());
+//        insanium_weight = new HashSet<>(INSANIUM_WEIGHT.get());
+//        creative_weight = new HashSet<>(CREATIVE_WEIGHT.get());
     }
 }
