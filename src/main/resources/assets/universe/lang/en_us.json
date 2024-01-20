@@ -6,6 +6,7 @@
   "block.universe.supremium_universe": "Supremium Contained Universe",
   "block.universe.insanium_universe": "Insanium Contained Universe",
   "block.universe.creative_universe": "Creative Contained Universe",
+  "item.universe.drop_specifier": "Universe Drop Specifier",
 
   "creativetab.universetab": "Contained Universe"
 }

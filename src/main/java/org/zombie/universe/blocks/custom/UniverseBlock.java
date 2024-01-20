@@ -16,8 +16,12 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.zombie.universe.Config;
 import org.zombie.universe.blocks.Modblocks;
+import org.zombie.universe.item.ModItems;
 
 import java.util.List;
+import java.util.Set;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class UniverseBlock extends Block {
     public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 8, 16);
@@ -68,7 +72,7 @@ public class UniverseBlock extends Block {
 
     private static void inferium_universe(Level level, Player player, BlockPos pos){
         List<Item> items = Config.inferium.stream().toList();
-        UniverseDrops.spawn(level,items,player,pos);
+        UniverseDrops.spawn(level, items, player, pos);
     }
     private static void prudentium_universe(Level level, Player player, BlockPos pos){
         List<Item> items = Config.prudentium.stream().toList();

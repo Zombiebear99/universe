@@ -25,6 +25,7 @@ public class ModCreativeTab {
                         output.accept(Modblocks.SUPREMIUM_UNIVERSE.get());
                         output.accept(Modblocks.INSANIUM_UNIVERSE.get());
                         output.accept(Modblocks.CREATIVE_UNIVERSE.get());
+                        output.accept(ModItems.SPECIFIER_WAND.get());
                     }))
 
                     .build());

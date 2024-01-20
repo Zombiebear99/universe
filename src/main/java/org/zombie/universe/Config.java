@@ -24,6 +24,11 @@ public class Config
             .comment("Bonus rolls.")
             .defineInRange("Bonus Rolls", 0, 0, 20);
 
+    private static final ForgeConfigSpec.IntValue SPECIFIC_DROP = BUILDER
+            .comment("amount of drops using the specifier.")
+            .defineInRange("specifier drops", 1, 1, 64);
+
+
 //     a list of strings that are treated as resource locations for items
 //    inferium universe
     private static final ForgeConfigSpec.ConfigValue<List<? extends String>> INFERIUM_STRINGS = BUILDER
@@ -90,6 +95,7 @@ public class Config
     public static Set<Item> insanium;
     public static Set<Item> creative;
     public static int bonus;
+    public static int specific_drop;
     public static Set<Integer> inferium_weight;
     public static Set<Integer> prudentium_weight;
     public static Set<Integer> tertium_weight;
@@ -143,6 +149,7 @@ public class Config
                 .collect(Collectors.toSet());
 
         bonus = BONUS.get();
+        specific_drop = SPECIFIC_DROP.get();
 
 //        inferium_weight = new HashSet<>(INFERIUM_WEIGHT.get());
 //        prudentium_weight = new HashSet<>(PRUDENTIUM_WEIGHT.get());
